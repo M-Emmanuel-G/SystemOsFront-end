@@ -16,7 +16,6 @@ export default function IndexPage() {
                 <button onClick={()=>{navigate('/OsPage')}}>Enviar O.S.</button> */}
             </ContainerSubHeader>
             <ContainerBanner>
-                <img src='https://yata-apix-c8896bdc-0006-4f17-a098-caf2336e8ee5.s3-object.locaweb.com.br/3172e4dff87c49dfa33a99fe50313a7a.png'/>
                 <ContainerEachServices onClick={()=>{navigate('/OsPage')}}><h3 >Enviar Os</h3></ContainerEachServices>
                 <ContainerEachServices onClick={(()=>{navigate('/Login')})}><h3>Area Colaborador</h3></ContainerEachServices>
             </ContainerBanner>
