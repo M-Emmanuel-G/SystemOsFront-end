@@ -6,6 +6,8 @@ import AdminPage from "../pages/AdminPage/admin";
 import PointRegister from "../pages/PointRegister/pointRegister";
 import OsPage from "../pages/OsPage/OsPage";
 import AnimationPage from "../pages/AnimationPage/animationPage";
+import UniqueOs from "../pages/UniqueOs/UniqueOs";
+import UsersPage from "../pages/UsersPage/usersPage";
 
 export default function Router() {
  return (
@@ -17,7 +19,8 @@ export default function Router() {
         <Route path="/Admin" element={<AdminPage/>}/>
         <Route path="/RegistroDePonto" element={<PointRegister/>}/>
         <Route path="/OsPage" element={<OsPage/>}/>
-        <Route path="/Colaboradores" element={<OsPage/>}/>
+        <Route path="/Colaboradores" element={<UsersPage/>}/>
+        <Route path="/UniqueOs" element={<UniqueOs/>}/>
     </Routes>
    </BrowserRouter>
  );

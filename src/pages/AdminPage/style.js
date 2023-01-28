@@ -51,7 +51,7 @@ export const ContainerOsAdmin = styled.div`
 
 export const ListOs = styled.div`
     width: 100%;
-    height: 20%;
+    height: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -59,6 +59,11 @@ export const ListOs = styled.div`
     
     section{
         width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
     }
     div{
         input{
@@ -75,36 +80,6 @@ export const ListOs = styled.div`
             ::placeholder{
                 color: #333;
                 font-size: 1rem;
-            }
-        }
-    }
-`
-
-export const UniqueOs = styled.div`
-    width: 100%;
-    height: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    table{
-        width: 100%;
-        height: 100%;
-        th{
-            width: 200px;
-            height: 30px;
-        }
-        td{
-            width: 200px;
-            height: 30px;
-            text-align: center;
-            button{
-                background: red;
-                color: #fff;
-                font-size: 1rem;
-                width: 70px;
-                height: 25px;
-                border-radius: 20px;
-                border: none;
             }
         }
     }

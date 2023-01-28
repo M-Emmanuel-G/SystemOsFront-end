@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { ContainerBase, ContainerMobile } from '../../style/styleBase';
 import { ContainerHomePage } from './style';
 import Header from '../../components/header/header'
+import { BASE_URL } from '../../BASE_URL/BASE_URL';
+import Swal from 'sweetalert2';
 
 export default function OsPage() {
     const navigate = useNavigate()
@@ -33,9 +35,28 @@ export default function OsPage() {
     const sendForm = (ev)=>{
         ev.preventDefault()
         axios
-            .post(`http://localhost:3003/os/create`, body)
-            .then((response)=>{alert(response.data)})
-            .catch((error)=>{alert(error.response.data)})
+            .post(`${BASE_URL}/os/create`, body)
+            .then((response)=>{
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: `${response.data}`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+                  navigate(-1)
+            })
+            .catch((error)=>{
+                Swal.fire({
+                    heightAuto: '100px',
+                    position: 'center',
+                    icon: 'error',
+                    title: `${error.response.data}`,
+                    showConfirmButton: false,
+                    timer: 5000
+                  })
+            })
+            
     }
 
  return (
