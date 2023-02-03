@@ -20,7 +20,7 @@ export const ContainerAnimation = styled.div`
     align-items: center;
     img{
         width: 90%;
-        height: 20%;
+        height: 40%;
         animation: ${AnimLogo} 5s linear;
     }
 `;

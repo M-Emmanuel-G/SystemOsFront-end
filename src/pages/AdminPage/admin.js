@@ -7,7 +7,7 @@ import Header from '../../components/header/header';
 import { GlobalStateContext } from '../../context/GlobalStateContext';
 import useRequestData from '../../hooks/useRequestData';
 import { AnimLoading, ContainerBase, ContainerMobile } from '../../style/styleBase';
-import { ContainerAdmin, ContainerMenuAdmin, ContainerOsAdmin, ListOs, UniqueOs } from './style';
+import { ContainerAdmin, ContainerMenuAdmin, ContainerOsAdmin, ListOs} from './style';
 
 export default function AdminPage() {
     const context = useContext(GlobalStateContext)
