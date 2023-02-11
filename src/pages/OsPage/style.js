@@ -9,7 +9,7 @@ export const ContainerHomePage = styled.div`
     flex-direction: column;
     overflow: auto;
     form{
-        margin-top: 15rem;
+        margin-top: 20rem;
         display: flex;
         flex-direction: column;
         align-items: center;

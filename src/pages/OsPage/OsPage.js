@@ -26,11 +26,12 @@ export default function OsPage() {
     const [storageTime, setStorageTime] = useState('')
     const [obs, setObs] = useState('')
     const [signedBy, setSignedBy] = useState('')
+    const [email, setEmail] = useState('')
  
     const sendForm = (ev)=>{
         ev.preventDefault()
 
-        if(!collaborator|| !date|| !client|| !model|| !user|| !password|| !ip|| !httpPort|| !servicePort|| !storage|| !storageTime|| !obs|| !signedBy){
+        if(!collaborator|| !date|| !client|| !model|| !user|| !password|| !ip|| !httpPort|| !servicePort|| !storage|| !storageTime|| !signedBy){
             Swal.fire({
                 title:'Ops....',
                 text:'Todas a informações precisam ser enviadas..'
@@ -50,7 +51,8 @@ export default function OsPage() {
                 Armazenamento: storage,
                 Dias_de_gravacao: storageTime,
                 Observacao: obs,
-                Autorizado_por: signedBy
+                Autorizado_por: signedBy,
+                Email_Cliente: email
             }
     
             emailjs.send("service_25vayr4", "template_qkpvdzv", templateOS, '5ZxPWFsvg_-WP62gn')
@@ -136,13 +138,14 @@ export default function OsPage() {
                     
                 />
                 <input
+                    type='text'
                     placeholder='Armazenamento'
                     value={storage}
                     onChange={(ev)=>{setStorage(ev.target.value)}}
                     
                 />
                 <input
-                    type='number'
+                    type='text'
                     placeholder='Dias de gravação:'
                     value={storageTime}
                     onChange={(ev)=>{setStorageTime(ev.target.value)}}
@@ -153,9 +156,15 @@ export default function OsPage() {
                     onChange={(ev)=>{setObs(ev.target.value)}}
                 />
                 <input
-                placeholder='Assinado por:'
+                    placeholder='Assinado por:'
                     value={signedBy}
                     onChange={(ev)=>{setSignedBy(ev.target.value)}}
+                />
+                <input
+                    type='email'
+                    placeholder='Enviar para:'
+                    value={email}
+                    onChange={(ev)=>{setEmail(ev.target.value)}}
                 />
                
                </div>
