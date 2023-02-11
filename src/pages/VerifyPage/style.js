@@ -23,5 +23,7 @@ export const ContainerVerify = styled.div`
         background: #424242;
         color: #fff;
         font-size: 1rem;
+        position: absolute;
+        bottom: 50px;
     }
 `;

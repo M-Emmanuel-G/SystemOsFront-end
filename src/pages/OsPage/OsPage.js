@@ -8,6 +8,7 @@ import { BASE_URL } from '../../BASE_URL/BASE_URL';
 import Swal from 'sweetalert2';
 import emailjs from '@emailjs/browser'
 import { useEffect } from 'react';
+import Footer from '../../components/Footer/footer'
 
 export default function OsPage() {
     const navigate = useNavigate()
@@ -68,7 +69,6 @@ export default function OsPage() {
 
  return (
     <ContainerBase>
-       <ContainerMobile>
        <Header/>
         <ContainerHomePage>
             
@@ -173,7 +173,7 @@ export default function OsPage() {
                 </section>
             </form>
         </ContainerHomePage>
-       </ContainerMobile>
+        <Footer/>
     </ContainerBase>
  );
 }

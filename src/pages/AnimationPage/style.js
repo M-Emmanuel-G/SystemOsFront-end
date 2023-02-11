@@ -19,8 +19,8 @@ export const ContainerAnimation = styled.div`
     justify-content: center;
     align-items: center;
     img{
-        width: 90%;
-        height: 40%;
+        width: 400px;
+        height: 300px;
         animation: ${AnimLogo} 5s linear;
     }
 `;

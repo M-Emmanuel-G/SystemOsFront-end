@@ -13,11 +13,9 @@ export default function AnimationPage() {
     },[])
  return (
     <ContainerBase>
-        <ContainerMobile>
             <ContainerAnimation>
                 <img src={imgLogo}/>
             </ContainerAnimation>
-        </ContainerMobile>
     </ContainerBase>
  );
 }

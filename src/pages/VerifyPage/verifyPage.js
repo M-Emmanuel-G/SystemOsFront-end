@@ -9,7 +9,6 @@ export default function VerifyPage() {
     const navigate = useNavigate()
  return (
     <ContainerBase>
-        <ContainerMobile>
             <Header/>
             <ContainerVerify>
                 <h2>Atenção:</h2>
@@ -26,9 +25,8 @@ export default function VerifyPage() {
                 <span>limpeza interna do DVR...</span>
 
                 <button onClick={()=>{navigate('/OsPage')}}>Avançar</button>
-                <Footer/>
             </ContainerVerify>
-        </ContainerMobile>
+            <Footer/>
     </ContainerBase>
  );
 }

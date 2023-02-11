@@ -9,7 +9,6 @@ export default function IndexPage() {
     const navigate = useNavigate()
  return (
    <ContainerBase>
-        <ContainerMobile>
         <Header/>
             <ContainerIndexPage>
                 <ContainerSubHeader>
@@ -22,7 +21,6 @@ export default function IndexPage() {
             </ContainerBanner>
             <Footer/>
             </ContainerIndexPage>
-        </ContainerMobile>
     </ContainerBase>
  );
 }

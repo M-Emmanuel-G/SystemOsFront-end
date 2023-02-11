@@ -9,10 +9,11 @@ export const ContainerHomePage = styled.div`
     flex-direction: column;
     overflow: auto;
     form{
-        margin-top: 20rem;
+        margin-top: 10rem;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
 
         div{
            width: 100%;
