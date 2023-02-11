@@ -7,8 +7,9 @@ export const ContainerHomePage = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: auto;
     form{
-        overflow-y: auto;
+        margin-top: 15rem;
         display: flex;
         flex-direction: column;
         align-items: center;

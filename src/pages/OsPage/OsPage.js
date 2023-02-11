@@ -6,57 +6,62 @@ import { ContainerHomePage } from './style';
 import Header from '../../components/header/header'
 import { BASE_URL } from '../../BASE_URL/BASE_URL';
 import Swal from 'sweetalert2';
+import emailjs from '@emailjs/browser'
+import { useEffect } from 'react';
 
 export default function OsPage() {
     const navigate = useNavigate()
 
+    const [collaborator, setCollaborator] = useState('')
+    const [date, setDate] = useState('')
     const [client, setClient] = useState('')
     const [model, setModel] = useState('')
     const [user, setUser] = useState('')
     const [password, setPassword] = useState('')
+    const [qtdCam, setQtdCam] = useState('')
     const [ip, setIp] = useState('')
     const [httpPort, setHttpPort] = useState('')
     const [servicePort, setservicePort] = useState('')
     const [storage, setStorage] = useState('')
     const [storageTime, setStorageTime] = useState('')
+    const [obs, setObs] = useState('')
+    const [signedBy, setSignedBy] = useState('')
  
-    const body = {
-        client: client,
-        model: model,
-        user: user,
-        password: password,
-        ip: ip,
-        http_Port: httpPort,
-        service_Port: servicePort,
-        storage: storage,
-        recording_Days: storageTime
-    }
-
     const sendForm = (ev)=>{
         ev.preventDefault()
-        axios
-            .post(`${BASE_URL}/os/create`, body)
-            .then((response)=>{
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: `${response.data}`,
-                    showConfirmButton: false,
-                    timer: 1500
-                  })
-                  navigate(-1)
+
+        if(!collaborator|| !date|| !client|| !model|| !user|| !password|| !ip|| !httpPort|| !servicePort|| !storage|| !storageTime|| !obs|| !signedBy){
+            Swal.fire({
+                title:'Ops....',
+                text:'Todas a informações precisam ser enviadas..'
             })
-            .catch((error)=>{
-                Swal.fire({
-                    heightAuto: '100px',
-                    position: 'center',
-                    icon: 'error',
-                    title: `${error.response.data}`,
-                    showConfirmButton: false,
-                    timer: 5000
-                  })
-            })
-            
+        } else{
+            const templateOS = {
+                colaborador : collaborator,
+                data: date,
+                cliente: client,
+                modelo: model,
+                usuario: user,
+                senha: password,
+                Cameras_Instaladas: qtdCam,
+                ip: ip,
+                Porta_HTTP: httpPort,
+                Porta_Servico: servicePort,
+                Armazenamento: storage,
+                Dias_de_gravacao: storageTime,
+                Observacao: obs,
+                Autorizado_por: signedBy
+            }
+    
+            emailjs.send("service_25vayr4", "template_qkpvdzv", templateOS, '5ZxPWFsvg_-WP62gn')
+            .then((resp)=>{
+                navigate('/HomePage')
+                Swal.fire('O.S. foi enviado com sucesso...')
+                ;})
+            .catch((error)=>{alert(error)})
+        }
+
+       
     }
 
  return (
@@ -64,63 +69,95 @@ export default function OsPage() {
        <ContainerMobile>
        <Header/>
         <ContainerHomePage>
+            
             <h2>Envio OS</h2>
             <form onSubmit={sendForm}>
-               <div>
-               <input
-                    placeholder='cliente'
-                    value={client}
-                    onChange={(ev)=>{setClient(ev.target.value)}}
-                    
+                <div>
+                <input
+                    type='text'
+                    placeholder='Nome do Colaborador'
+                    value={collaborator}
+                    onChange={(ev)=>{setCollaborator(ev.target.value)}}
                 />
                 <input
-                    placeholder='modelo/marca'
+                    type='date'
+                    placeholder='Data'
+                    value={date}
+                    onChange={(ev)=>{setDate(ev.target.value)}}
+                />
+                
+               <input
+                    placeholder='Cliente'
+                    value={client}
+                    onChange={(ev)=>{setClient(ev.target.value)}}
+                />
+                <input
+                    placeholder='Modelo/marca'
                     value={model}
                     onChange={(ev)=>{setModel(ev.target.value)}}
                     
                 />
                 <input
-                    placeholder='usuario'
+                    placeholder='Usuario'
                     value={user}
                     onChange={(ev)=>{setUser(ev.target.value)}}
                     
                 />
                 <input
-                    placeholder='senha'
+                    placeholder='Senha'
                     value={password}
                     onChange={(ev)=>{setPassword(ev.target.value)}}
                     
                 />
                 <input
-                    placeholder='ip'
+                    placeholder='Qtd. de cameras'
+                    value={qtdCam}
+                    onChange={(ev)=>{setQtdCam(ev.target.value)}}
+                    
+                />
+                <input
+                    placeholder='Ip'
                     value={ip}
                     onChange={(ev)=>{setIp(ev.target.value)}}
                     
                 />
                 <input
-                    placeholder='porta http'
+                    type='number'
+                    placeholder='Porta http'
                     value={httpPort}
                     onChange={(ev)=>{setHttpPort(ev.target.value)}}
                     
                 />
                 <input
-                    placeholder='porta servico'
+                    type='number'
+                    placeholder='Porta servico'
                     value={servicePort}
                     onChange={(ev)=>{setservicePort(ev.target.value)}}
                     
                 />
                 <input
-                    placeholder='armazenamento'
+                    placeholder='Armazenamento'
                     value={storage}
                     onChange={(ev)=>{setStorage(ev.target.value)}}
                     
                 />
                 <input
-                    placeholder='tempo de gravacao'
+                    type='number'
+                    placeholder='Dias de gravação:'
                     value={storageTime}
                     onChange={(ev)=>{setStorageTime(ev.target.value)}}
-
                 />
+                <input
+                    placeholder='Observações:'
+                    value={obs}
+                    onChange={(ev)=>{setObs(ev.target.value)}}
+                />
+                <input
+                placeholder='Assinado por:'
+                    value={signedBy}
+                    onChange={(ev)=>{setSignedBy(ev.target.value)}}
+                />
+               
                </div>
                 <section>
                     <button>Enviar registro</button>

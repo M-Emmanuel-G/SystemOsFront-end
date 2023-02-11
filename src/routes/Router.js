@@ -8,6 +8,7 @@ import OsPage from "../pages/OsPage/OsPage";
 import AnimationPage from "../pages/AnimationPage/animationPage";
 import UniqueOs from "../pages/UniqueOs/UniqueOs";
 import UsersPage from "../pages/UsersPage/usersPage";
+import VerifyPage from "../pages/VerifyPage/verifyPage";
 
 export default function Router() {
  return (
@@ -21,6 +22,7 @@ export default function Router() {
         <Route path="/OsPage" element={<OsPage/>}/>
         <Route path="/Colaboradores" element={<UsersPage/>}/>
         <Route path="/UniqueOs" element={<UniqueOs/>}/>
+        <Route path="/verificacao" element={<VerifyPage/>}/>
     </Routes>
    </BrowserRouter>
  );
