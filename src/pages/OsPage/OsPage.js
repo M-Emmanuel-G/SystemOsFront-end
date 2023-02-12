@@ -32,7 +32,7 @@ export default function OsPage() {
     const sendForm = (ev)=>{
         ev.preventDefault()
 
-        if(!collaborator|| !date|| !client|| !model|| !user|| !password|| !ip|| !httpPort|| !servicePort|| !storage|| !storageTime|| !signedBy){
+        if( !collaborator|| !date|| !client|| !model|| !user|| !password|| !ip|| !httpPort|| !servicePort|| !storage|| !storageTime|| !signedBy){
             Swal.fire({
                 title:'Ops....',
                 text:'Todas a informações precisam ser enviadas..'

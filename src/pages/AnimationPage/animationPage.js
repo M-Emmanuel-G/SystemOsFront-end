@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ContainerBase, ContainerMobile } from '../../style/styleBase';
 import { ContainerAnimation } from './style';
-import imgLogo from '../images/logoCtts.jpg'
+import imgLogo from '../../images/logoCtts.jpg'
+import { motion } from 'framer-motion'
 
 export default function AnimationPage() {
     const navigate = useNavigate()

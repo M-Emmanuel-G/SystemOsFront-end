@@ -20,27 +20,8 @@ export const ContainerIndexPage = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    button{
-        width: 170px;
-        height: 30px;
-        font-size: 1.5rem;
-        margin: 1rem 0;
-        background: none;
-        border: none;
-    }
 `;
 
-export const ContainerSubHeader = styled.div`
-    width: 100%;
-    height: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    button{
-        margin: 0 1rem;
-    }
-    
-`
 export const ContainerBanner = styled.div`
     width: 100%;
     height: 90%;
@@ -50,10 +31,10 @@ export const ContainerBanner = styled.div`
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    flex-direction: column;
     img{
         width: 90%;
         height: 20%;
-        /* margin-top: 2rem; */
     }
     
 `
@@ -62,7 +43,6 @@ export const ContainerEachServices = styled.div`
     width: 150px;
     height: 100px;
     border-radius: 10px;
-    border: 2px solid black;
     margin: 0.8rem;
     display: flex;
     justify-content: center;
@@ -71,3 +51,31 @@ export const ContainerEachServices = styled.div`
     background: #424242;
     color: #fff;
 `;
+
+export const ContainerHour = styled.div`
+    width: 500px;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 5rem;
+    img{
+        width: 400px;
+        height: 200px;
+        border-radius: 10px;
+        pointer-events: none;
+        padding: 15px;
+    }
+    .carousel{
+        cursor: grab;
+        overflow: hidden;
+    }
+
+    .inner{
+        display: flex;
+    }
+
+    .item{
+        min-height: 200px;
+        min-width: 400px;
+        padding: 10px;
+    }
+`
