@@ -33,8 +33,8 @@ export const ContainerBanner = styled.div`
     flex-wrap: wrap;
     flex-direction: column;
     img{
-        width: 90%;
-        height: 20%;
+        width: 100%;
+        height: 100%;
     }
     
 `
@@ -43,7 +43,7 @@ export const ContainerEachServices = styled.div`
     width: 150px;
     height: 100px;
     border-radius: 10px;
-    margin: 0.8rem;
+    margin: 0 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,29 +53,41 @@ export const ContainerEachServices = styled.div`
 `;
 
 export const ContainerHour = styled.div`
-    width: 500px;
-    height: 200px;
+    width: 90%;
+    height: 150px;
     border-radius: 10px;
-    margin-bottom: 5rem;
-    img{
-        width: 400px;
-        height: 200px;
-        border-radius: 10px;
-        pointer-events: none;
-        padding: 15px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+        font-size: 4rem;
     }
-    .carousel{
-        cursor: grab;
-        overflow: hidden;
-    }
+`
 
-    .inner{
-        display: flex;
+export const CardHour = styled.div`
+    width: 200px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
+    background: #424242;
+    span{
+        font-size: 4rem;
+        color: #fff;
     }
+`
 
-    .item{
-        min-height: 200px;
-        min-width: 400px;
-        padding: 10px;
-    }
+export const ContainerServices = styled.div`
+    width: 400px;
+    height: 90%;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
 `

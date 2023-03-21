@@ -33,3 +33,27 @@ export const AnimLoading = styled.div`
     border-top-color: red;
     animation: ${AnimLoadingKey} .2s infinite;
 `
+
+const LoadingPulse = keyframes`
+    0%{
+        transform: scale(0.15);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+`
+
+export const AnimPulse = styled.div`
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #111;
+    display: none;
+
+    animation: ${LoadingPulse} 1s infinite linear;
+`

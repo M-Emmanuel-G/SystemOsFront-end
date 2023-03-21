@@ -1,13 +1,10 @@
-import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ContainerBase, ContainerMobile } from '../../style/styleBase';
+import { ContainerBase } from '../../style/styleBase';
 import { ContainerHomePage } from './style';
 import Header from '../../components/header/header'
-import { BASE_URL } from '../../BASE_URL/BASE_URL';
 import Swal from 'sweetalert2';
 import emailjs from '@emailjs/browser'
-import { useEffect } from 'react';
 import Footer from '../../components/Footer/footer'
 
 export default function OsPage() {
@@ -170,6 +167,7 @@ export default function OsPage() {
                </div>
                 <section>
                     <button>Enviar registro</button>
+                    <button type='button' onClick={()=>{navigate('/verificacao')}}>Voltar</button>
                 </section>
             </form>
         </ContainerHomePage>

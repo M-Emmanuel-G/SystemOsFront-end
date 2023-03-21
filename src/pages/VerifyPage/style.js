@@ -7,12 +7,19 @@ export const ContainerVerify = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
+    overflow-y: auto;
     span{
         margin: 0.5rem 0;
         font-size: 15px;
     }
     h2{
         font-size: 20px;
+    }
+    div{
+        position: absolute;
+        bottom: 50px;
+        display:flex;
+        flex-direction: column;
     }
     button{
         width: 300px;
@@ -23,7 +30,5 @@ export const ContainerVerify = styled.div`
         background: #424242;
         color: #fff;
         font-size: 1rem;
-        position: absolute;
-        bottom: 50px;
     }
 `;

@@ -1,43 +1,46 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../components/header/header';
-import { ContainerBase } from '../../style/styleBase';
-import { ContainerBanner, ContainerEachServices, ContainerHour, ContainerIndexPage } from './style';
+import { AnimPulse, ContainerBase } from '../../style/styleBase';
+import { CardHour, ContainerEachServices, ContainerHour, ContainerIndexPage, ContainerServices } from './style';
 import Footer from '../../components/Footer/footer'
-import Slider from '../../components/Slider/slider';
-import {motion} from 'framer-motion'
+import { getCurrentTime } from '../../functions/getCurrentTime';
 
 export default function IndexPage() {
     const navigate = useNavigate()
-    const [slider, setSlider] = useState(Slider())
-    const carousel = useRef()
-    const [width, setWidth] = useState(0)
+    const [isLoading, setIsLoading] = useState(false)
+    const [time, setTime] = useState({})
+
 
     useEffect(()=>{
-        setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth)
+        
+        const interval = setInterval(() => {
+            const currentTime = getCurrentTime()
+            setTime(currentTime)
+        }, 1000);
+        return () => clearInterval(interval)
     },[])
 
+    const renderHour = ()=>{
+        return(
+            <>
+                <CardHour><span>{time.hours}</span></CardHour>
+                <CardHour><span>{time.minutes}</span></CardHour>
+                <CardHour><span>{time.seconds}</span></CardHour>
+            </>
+        )
+    }
 return (
    <ContainerBase>
         <Header/>
             <ContainerIndexPage>
-            <ContainerBanner>
+            <ContainerServices>
                 <ContainerHour>
-                    <motion.div ref={carousel} className='carousel' whileTap={{cursor:'grabbing'}}>
-                        <motion.div className='inner' drag = 'x' dragConstraints={{right:0, left: - width}}>
-                            {slider.map((image, key)=>{
-                                return(
-                                    <motion.div className='item' key={key} animate={{ x: [100, 0] }} transition = {{ duration : 1, delay : 2 }}>
-                                            <img src={image.img}/>
-                                    </motion.div>    
-                                )
-                            })}
-                        </motion.div>
-                    </motion.div>
+                    {renderHour()}
                 </ContainerHour>
                 <ContainerEachServices onClick={()=>{navigate('/verificacao')}}><h3 >Enviar Os</h3></ContainerEachServices>
-                {/* <ContainerEachServices onClick={(()=>{navigate('/Login')})}><h3>Area Colaborador</h3></ContainerEachServices> */}
-            </ContainerBanner>
+                <ContainerEachServices onClick={()=>{navigate('/solicitacao')}}><h3 >Solicitacao de serviço</h3></ContainerEachServices>
+            </ContainerServices>
             </ContainerIndexPage>
             <Footer/>
     </ContainerBase>

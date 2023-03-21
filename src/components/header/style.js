@@ -3,9 +3,10 @@ import styled from 'styled-components';
 export const ContainerHeader = styled.div`
     width: 100%;
     height: 10%;
-    background: linear-gradient(39deg, rgba(2,2,3,1) 0%, rgba(106,106,110,1) 100%);    display: flex;
-    justify-content: center;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    background: linear-gradient(39deg, rgba(2,2,3,1) 0%, rgba(106,106,110,1) 100%);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     color: #fff;

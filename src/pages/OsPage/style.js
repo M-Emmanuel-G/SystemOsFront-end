@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 export const ContainerHomePage = styled.div`
     width: 100%;
-    height: 90%;
+    height: 85%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     overflow: auto;
     form{
-        margin-top: 10rem;
+        margin-top: 12rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -30,6 +30,7 @@ export const ContainerHomePage = styled.div`
             font-size: 1rem;
             outline: 0;
             border: none;
+            border-bottom: 2px solid black;
             ::placeholder{
                 text-align: center;
                 font-size: 1.5rem;
@@ -37,6 +38,8 @@ export const ContainerHomePage = styled.div`
             }
         }
         section{
+            display: flex;
+            flex-direction: column;
             button{
                 width: 300px;
                 border-radius: 20px;
