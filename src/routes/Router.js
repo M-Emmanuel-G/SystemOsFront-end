@@ -9,12 +9,15 @@ import AnimationPage from "../pages/AnimationPage/animationPage";
 import UniqueOs from "../pages/UniqueOs/UniqueOs";
 import UsersPage from "../pages/UsersPage/usersPage";
 import VerifyPage from "../pages/VerifyPage/verifyPage";
+import ObservationPage from "../pages/ObservationPage/observationPage";
+import Solicitation from "../pages/solicitation/solicitation";
+import ManualProducts from "../pages/ManualProducts/manualProducts";
 
 export default function Router() {
  return (
    <BrowserRouter>
     <Routes>
-        <Route index element={<AnimationPage/>}/>
+        <Route index element={<IndexPage/>}/>
         <Route path="/HomePage" element={<IndexPage/>}/>
         <Route path="/Login" element={<LoginPage/>}/>
         <Route path="/Admin" element={<AdminPage/>}/>
@@ -23,6 +26,9 @@ export default function Router() {
         <Route path="/Colaboradores" element={<UsersPage/>}/>
         <Route path="/UniqueOs" element={<UniqueOs/>}/>
         <Route path="/verificacao" element={<VerifyPage/>}/>
+        <Route path="/observacoes" element={<ObservationPage/>}/>
+        <Route path="/solicitacao" element={<Solicitation/>}/>
+        <Route path="/manuais" element={<ManualProducts/>}/>
     </Routes>
    </BrowserRouter>
  );

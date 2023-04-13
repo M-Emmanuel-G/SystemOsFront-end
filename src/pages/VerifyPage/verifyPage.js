@@ -24,10 +24,12 @@ export default function VerifyPage() {
                 <span>conferir o sistema de interfonia,</span>
                 <span>limpeza do rack(Se necessário),</span>
                 <span>limpeza interna do DVR...</span>
-
-                <button onClick={()=>{navigate('/OsPage')}}>Avançar</button>
-                <Footer/>
+                <div>
+                    <button onClick={()=>{navigate('/OsPage')}}>Avançar</button>
+                    <button onClick={()=>{navigate('/HomePage')}}>Voltar</button>
+                </div>
             </ContainerVerify>
+            <Footer/>
         </ContainerMobile>
     </ContainerBase>
  );

@@ -2,17 +2,18 @@ import styled from 'styled-components';
 
 export const ContainerHomePage = styled.div`
     width: 100%;
-    height: 90%;
+    height: 85%;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     overflow: auto;
+    position: absolute;
+    z-index:0;
     form{
-        margin-top: 15rem;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
 
         div{
            width: 100%;
@@ -29,6 +30,7 @@ export const ContainerHomePage = styled.div`
             font-size: 1rem;
             outline: 0;
             border: none;
+            border-bottom: 2px solid black;
             ::placeholder{
                 text-align: center;
                 font-size: 1.5rem;
@@ -36,6 +38,8 @@ export const ContainerHomePage = styled.div`
             }
         }
         section{
+            display: flex;
+            flex-direction: column;
             button{
                 width: 300px;
                 border-radius: 20px;
@@ -49,4 +53,23 @@ export const ContainerHomePage = styled.div`
       }
     }
 
+`;
+
+export const ContainerOsPage = styled.div`
+    width: 100%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
+export const ContainerModal = styled.div`
+    width: 100%;
+    height: 100%;
+    background: none;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
 `;

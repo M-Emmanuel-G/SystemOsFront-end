@@ -1,13 +1,11 @@
-import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ContainerBase, ContainerMobile } from '../../style/styleBase';
-import { ContainerHomePage } from './style';
+import { AnimLoading, ContainerBase, ContainerMobile } from '../../style/styleBase';
+import { ContainerHomePage, ContainerModal, ContainerOsPage } from './style';
 import Header from '../../components/header/header'
-import { BASE_URL } from '../../BASE_URL/BASE_URL';
 import Swal from 'sweetalert2';
 import emailjs from '@emailjs/browser'
-import { useEffect } from 'react';
+import Footer from '../../components/Footer/footer'
 
 export default function OsPage() {
     const navigate = useNavigate()
@@ -26,16 +24,21 @@ export default function OsPage() {
     const [storageTime, setStorageTime] = useState('')
     const [obs, setObs] = useState('')
     const [signedBy, setSignedBy] = useState('')
+    const [email, setEmail] = useState('')
  
     const sendForm = (ev)=>{
         ev.preventDefault()
 
-        if(!collaborator|| !date|| !client|| !model|| !user|| !password|| !ip|| !httpPort|| !servicePort|| !storage|| !storageTime|| !obs|| !signedBy){
+        if(!collaborator|| !date|| !client|| !model|| !user|| !password|| !ip|| !httpPort|| !servicePort|| !storage|| !storageTime|| !signedBy){
             Swal.fire({
                 title:'Ops....',
                 text:'Todas a informações precisam ser enviadas..'
             })
         } else{
+
+            document.getElementById(`modal`).style.display = `flex`
+            document.getElementById(`osPage`).style.opacity = 0.5
+
             const templateOS = {
                 colaborador : collaborator,
                 data: date,
@@ -50,7 +53,8 @@ export default function OsPage() {
                 Armazenamento: storage,
                 Dias_de_gravacao: storageTime,
                 Observacao: obs,
-                Autorizado_por: signedBy
+                Autorizado_por: signedBy,
+                Email_Cliente: email
             }
     
             emailjs.send("service_25vayr4", "template_qkpvdzv", templateOS, '5ZxPWFsvg_-WP62gn')
@@ -68,7 +72,8 @@ export default function OsPage() {
     <ContainerBase>
        <ContainerMobile>
        <Header/>
-        <ContainerHomePage>
+        <ContainerOsPage>
+        <ContainerHomePage id='osPage'>
             
             <h2>Envio OS</h2>
             <form onSubmit={sendForm}>
@@ -136,13 +141,14 @@ export default function OsPage() {
                     
                 />
                 <input
+                    type='text'
                     placeholder='Armazenamento'
                     value={storage}
                     onChange={(ev)=>{setStorage(ev.target.value)}}
                     
                 />
                 <input
-                    type='number'
+                    type='text'
                     placeholder='Dias de gravação:'
                     value={storageTime}
                     onChange={(ev)=>{setStorageTime(ev.target.value)}}
@@ -153,17 +159,29 @@ export default function OsPage() {
                     onChange={(ev)=>{setObs(ev.target.value)}}
                 />
                 <input
-                placeholder='Assinado por:'
+                    placeholder='Assinado por:'
                     value={signedBy}
                     onChange={(ev)=>{setSignedBy(ev.target.value)}}
+                />
+                <input
+                    type='email'
+                    placeholder='Enviar para:'
+                    value={email}
+                    onChange={(ev)=>{setEmail(ev.target.value)}}
                 />
                
                </div>
                 <section>
                     <button>Enviar registro</button>
+                    <button type='button' onClick={()=>{navigate('/verificacao')}}>Voltar</button>
                 </section>
             </form>
         </ContainerHomePage>
+        <ContainerModal id='modal'>
+            <AnimLoading/>
+        </ContainerModal>
+        </ContainerOsPage>
+        <Footer/>
        </ContainerMobile>
     </ContainerBase>
  );

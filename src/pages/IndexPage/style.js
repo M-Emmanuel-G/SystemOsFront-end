@@ -20,27 +20,8 @@ export const ContainerIndexPage = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    button{
-        width: 170px;
-        height: 30px;
-        font-size: 1.5rem;
-        margin: 1rem 0;
-        background: none;
-        border: none;
-    }
 `;
 
-export const ContainerSubHeader = styled.div`
-    width: 100%;
-    height: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    button{
-        margin: 0 1rem;
-    }
-    
-`
 export const ContainerBanner = styled.div`
     width: 100%;
     height: 90%;
@@ -50,24 +31,59 @@ export const ContainerBanner = styled.div`
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    flex-direction: column;
     img{
-        width: 90%;
-        height: 20%;
-        /* margin-top: 2rem; */
+        width: 100%;
+        height: 100%;
     }
     
 `
 
 export const ContainerEachServices = styled.div`
-    width: 150px;
-    height: 100px;
-    border-radius: 10px;
-    border: 2px solid black;
-    margin: 0.8rem;
+    width: 90%;
+    height: 70px;
+    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    border-radius:10px;
     background: #424242;
     color: #fff;
 `;
+
+export const ContainerHour = styled.div`
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+        font-size: 4rem;
+    }
+`
+
+export const CardHour = styled.div`
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
+    background: #424242;
+    span{
+        font-size: 4rem;
+        color: #fff;
+    }
+`
+
+export const ContainerServices = styled.div`
+    width: 100%;
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    gap: 1rem 0;
+`

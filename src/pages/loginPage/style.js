@@ -37,8 +37,8 @@ export const ContainerLogin = styled.div`
             border-radius: 10px;
             margin: 1rem 0;
             border: none;
-            background: #424242;
-            color: #fff;
+            /* background: #424242; */
+            /* color: #fff; */
             font-size: 1rem;
         }
     }

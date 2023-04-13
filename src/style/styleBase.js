@@ -17,6 +17,10 @@ export const ContainerMobile = styled.div`
     border: 1px solid black;
     border-radius: 10px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `
 
 const AnimLoadingKey = keyframes`
@@ -25,11 +29,35 @@ const AnimLoadingKey = keyframes`
 `
 
 export const AnimLoading = styled.div`
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     border: 6px solid #424242;
     border-radius: 50%;
     background: none;
     border-top-color: red;
-    animation: ${AnimLoadingKey} .2s infinite;
+    animation: ${AnimLoadingKey} .5s infinite;
+`
+
+const LoadingPulse = keyframes`
+    0%{
+        transform: scale(0.15);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+`
+
+export const AnimPulse = styled.div`
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #111;
+    display: none;
+
+    animation: ${LoadingPulse} 1s infinite linear;
 `
