@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ContainerBase } from '../../style/styleBase';
-import { ContainerHomePage } from './style';
+import { AnimLoading, ContainerBase, ContainerMobile } from '../../style/styleBase';
+import { ContainerHomePage, ContainerModal, ContainerOsPage } from './style';
 import Header from '../../components/header/header'
 import Swal from 'sweetalert2';
 import emailjs from '@emailjs/browser'
@@ -29,12 +29,16 @@ export default function OsPage() {
     const sendForm = (ev)=>{
         ev.preventDefault()
 
-        if( !collaborator|| !date|| !client|| !model|| !user|| !password|| !ip|| !httpPort|| !servicePort|| !storage|| !storageTime|| !signedBy){
+        if(!collaborator|| !date|| !client|| !model|| !user|| !password|| !ip|| !httpPort|| !servicePort|| !storage|| !storageTime|| !signedBy){
             Swal.fire({
                 title:'Ops....',
                 text:'Todas a informações precisam ser enviadas..'
             })
         } else{
+
+            document.getElementById(`modal`).style.display = `flex`
+            document.getElementById(`osPage`).style.opacity = 0.5
+
             const templateOS = {
                 colaborador : collaborator,
                 data: date,
@@ -66,8 +70,10 @@ export default function OsPage() {
 
  return (
     <ContainerBase>
+       <ContainerMobile>
        <Header/>
-        <ContainerHomePage>
+        <ContainerOsPage>
+        <ContainerHomePage id='osPage'>
             
             <h2>Envio OS</h2>
             <form onSubmit={sendForm}>
@@ -171,7 +177,12 @@ export default function OsPage() {
                 </section>
             </form>
         </ContainerHomePage>
+        <ContainerModal id='modal'>
+            <AnimLoading/>
+        </ContainerModal>
+        </ContainerOsPage>
         <Footer/>
+       </ContainerMobile>
     </ContainerBase>
  );
 }

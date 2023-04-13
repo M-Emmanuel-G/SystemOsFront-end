@@ -9,7 +9,7 @@ export const ContainerVerify = styled.div`
     text-align: center;
     overflow-y: auto;
     span{
-        margin: 0.5rem 0;
+        margin: 0.37rem 0;
         font-size: 15px;
     }
     h2{
@@ -25,7 +25,7 @@ export const ContainerVerify = styled.div`
         width: 300px;
         border-radius: 20px;
         height: 30px;
-        margin: 1rem 0;
+        margin-top: 1rem;
         border: none;
         background: #424242;
         color: #fff;

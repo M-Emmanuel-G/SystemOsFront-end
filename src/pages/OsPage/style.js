@@ -4,12 +4,12 @@ export const ContainerHomePage = styled.div`
     width: 100%;
     height: 85%;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     overflow: auto;
+    position: absolute;
+    z-index:0;
     form{
-        margin-top: 12rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -53,4 +53,23 @@ export const ContainerHomePage = styled.div`
       }
     }
 
+`;
+
+export const ContainerOsPage = styled.div`
+    width: 100%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
+export const ContainerModal = styled.div`
+    width: 100%;
+    height: 100%;
+    background: none;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
 `;

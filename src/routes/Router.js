@@ -11,6 +11,7 @@ import UsersPage from "../pages/UsersPage/usersPage";
 import VerifyPage from "../pages/VerifyPage/verifyPage";
 import ObservationPage from "../pages/ObservationPage/observationPage";
 import Solicitation from "../pages/solicitation/solicitation";
+import ManualProducts from "../pages/ManualProducts/manualProducts";
 
 export default function Router() {
  return (
@@ -27,6 +28,7 @@ export default function Router() {
         <Route path="/verificacao" element={<VerifyPage/>}/>
         <Route path="/observacoes" element={<ObservationPage/>}/>
         <Route path="/solicitacao" element={<Solicitation/>}/>
+        <Route path="/manuais" element={<ManualProducts/>}/>
     </Routes>
    </BrowserRouter>
  );
