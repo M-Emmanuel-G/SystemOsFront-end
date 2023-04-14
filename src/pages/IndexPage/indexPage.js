@@ -12,7 +12,7 @@ export default function IndexPage() {
     const [time, setTime] = useState({})
 
 
-    useEffect(()=>{
+    useEffect(()=>{ 
         
         const interval = setInterval(() => {
             const currentTime = getCurrentTime()
