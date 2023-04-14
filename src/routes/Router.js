@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import IndexPage from "../pages/IndexPage/indexPage";
 import LoginPage from "../pages/loginPage/loginPage";
+import OsPage from "../pages/OsPage/OsPage";
 import VerifyPage from "../pages/VerifyPage/verifyPage";
 import ObservationPage from "../pages/ObservationPage/observationPage";
 import Solicitation from "../pages/solicitation/solicitation";
@@ -14,6 +15,7 @@ export default function Router() {
         <Route index element={<IndexPage/>}/>
         <Route path="/HomePage" element={<IndexPage/>}/>
         <Route path="/Login" element={<LoginPage/>}/>
+        <Route path="/OsPage" element={<OsPage/>}/>
         <Route path="/verificacao" element={<VerifyPage/>}/>
         <Route path="/observacoes" element={<ObservationPage/>}/>
         <Route path="/solicitacao" element={<Solicitation/>}/>
