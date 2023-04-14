@@ -1,6 +1,5 @@
 import React from 'react';
 import { ContainerHeader } from './style';
-import logo from '../../images/logoCtts.jpg'
 
 export default function Header() {
  return (
