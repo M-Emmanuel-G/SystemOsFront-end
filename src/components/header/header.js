@@ -4,7 +4,7 @@ import { ContainerHeader } from './style';
 export default function Header() {
  return (
     <ContainerHeader>
-      <h1>CTTS</h1>
+      <h1>Central Técnica</h1>
     </ContainerHeader>
  );
 }

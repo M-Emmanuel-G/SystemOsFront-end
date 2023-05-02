@@ -6,7 +6,7 @@ export const ContainerManualPage = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
-    overflow: auto ;
+    overflow: auto;
 `;
 
 export const ContainerSearch = styled.div`

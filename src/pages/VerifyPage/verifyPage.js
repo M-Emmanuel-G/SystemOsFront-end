@@ -2,8 +2,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../../components/Footer/footer';
 import Header from '../../components/header/header';
+import NavBar from '../../components/NavBar/navBar';
 import { ContainerBase, ContainerMobile } from '../../style/styleBase';
-import { ContainerVerify } from './style';
+import { ContainerAction, ContainerVerify } from './style';
 
 export default function VerifyPage() {
     const navigate = useNavigate()
@@ -24,11 +25,11 @@ export default function VerifyPage() {
                 <span>conferir o sistema de interfonia,</span>
                 <span>limpeza do rack(Se necessário),</span>
                 <span>limpeza interna do DVR...</span>
-                <div>
-                    <button onClick={()=>{navigate('/OsPage')}}>Avançar</button>
-                    <button onClick={()=>{navigate('/HomePage')}}>Voltar</button>
-                </div>
             </ContainerVerify>
+            <ContainerAction>
+                <button onClick={()=>{navigate('/OsPage')}}>Avançar</button>
+            </ContainerAction>
+            <NavBar/>
             <Footer/>
         </ContainerMobile>
     </ContainerBase>

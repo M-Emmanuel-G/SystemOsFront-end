@@ -6,6 +6,7 @@ import emailjs from '@emailjs/browser'
 import { useNavigate } from 'react-router-dom';
 import Footer from '../../components/Footer/footer';
 import Swal from 'sweetalert2';
+import NavBar from '../../components/NavBar/navBar';
 
 export default function Solicitation() {
 
@@ -71,11 +72,11 @@ export default function Solicitation() {
                     value={msgn}
                     onChange={(ev)=>{setMsgn(ev.target.value)}}
                 ></textarea>
-                <button type='button' onClick={()=>{navigate('/HomePage')}}>Voltar</button>
                 <button id='buttonSend'>Enviar</button>
             </form>
             <AnimPulse id='animPulse'/>
         </ContainerSolicitation>
+        <NavBar/>
         <Footer/>
         </ContainerMobile>
     </ContainerBase>
