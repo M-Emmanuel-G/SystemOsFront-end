@@ -2,11 +2,12 @@ import styled from 'styled-components';
 
 export const ContainerSolicitation = styled.div`
     width: 100%;
-    height: 85%;
+    height: 75%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow-y: auto;
     form{
         display: flex;
         flex-direction: column;
@@ -20,11 +21,11 @@ export const ContainerSolicitation = styled.div`
         }
         input{
             width: 300px;
-            height: 30px;
+            height: 50px;
             margin: 1rem 0;
             text-align: center;
             border: none;
-            border-bottom: 2px solid black;
+            /* border-bottom: 2px solid black; */
             outline: 0;
             ::placeholder{
                 font-size:1rem;
@@ -46,7 +47,7 @@ export const ContainerSolicitation = styled.div`
         button{
             width: 300px;
             border-radius: 20px;
-            height: 30px;
+            height: 60px;
             margin: 1rem 0;
             border: none;
             background: #424242;

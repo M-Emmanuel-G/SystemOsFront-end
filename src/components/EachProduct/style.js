@@ -4,7 +4,6 @@ export const ContainerEachProduct = styled.div`
     width: 90%;
     height: 100px;
     border-radius:10px;
-    border: 1px solid #000;
     margin-top: 1rem;
     display: flex;
     justify-content: space-between;

@@ -12,17 +12,6 @@ export default function ManualProducts() {
     const context = useContext(GlobalStateContext)
     const [search, setSearch] = useState('')
 
-    // const renderProducts = ()=>{
-    //     context.manual.filter((manual)=>{
-    //         return manual.product.includes(search)
-    //     }).map((manual, key)=>{
-    //         <EachProduct
-    //         key={key}
-    //         product = {manual}
-    //         />
-    //     })
-    // }
-
  return (
     <ContainerBase>
         <ContainerMobile>

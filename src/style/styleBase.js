@@ -7,7 +7,6 @@ export const ContainerBase = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: none;
     position: relative;
 `;
 
@@ -21,6 +20,7 @@ export const ContainerMobile = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image:url() ;
 `
 
 const AnimLoadingKey = keyframes`

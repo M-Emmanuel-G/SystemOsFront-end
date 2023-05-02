@@ -6,6 +6,7 @@ import Header from '../../components/header/header'
 import Swal from 'sweetalert2';
 import emailjs from '@emailjs/browser'
 import Footer from '../../components/Footer/footer'
+import NavBar from '../../components/NavBar/navBar';
 
 export default function OsPage() {
     const navigate = useNavigate()
@@ -70,118 +71,118 @@ export default function OsPage() {
 
  return (
     <ContainerBase>
-       <ContainerMobile>
-       <Header/>
-        <ContainerOsPage>
-        <ContainerHomePage id='osPage'>
-            
-            <h2>Envio OS</h2>
-            <form onSubmit={sendForm}>
-                <div>
-                <input
-                    type='text'
-                    placeholder='Nome do Colaborador'
-                    value={collaborator}
-                    onChange={(ev)=>{setCollaborator(ev.target.value)}}
-                />
-                <input
-                    type='date'
-                    placeholder='Data'
-                    value={date}
-                    onChange={(ev)=>{setDate(ev.target.value)}}
-                />
-                
-               <input
-                    placeholder='Cliente'
-                    value={client}
-                    onChange={(ev)=>{setClient(ev.target.value)}}
-                />
-                <input
-                    placeholder='Modelo/marca'
-                    value={model}
-                    onChange={(ev)=>{setModel(ev.target.value)}}
+        <ContainerMobile>
+            <Header/>
+            <ContainerOsPage>
+                <ContainerHomePage id='osPage'>
                     
-                />
-                <input
-                    placeholder='Usuario'
-                    value={user}
-                    onChange={(ev)=>{setUser(ev.target.value)}}
+                    <h2>Envio OS</h2>
+                    <form onSubmit={sendForm}>
+                        <div>
+                        <input
+                            type='text'
+                            placeholder='Nome do Colaborador'
+                            value={collaborator}
+                            onChange={(ev)=>{setCollaborator(ev.target.value)}}
+                        />
+                        <input
+                            type='date'
+                            placeholder='Data'
+                            value={date}
+                            onChange={(ev)=>{setDate(ev.target.value)}}
+                        />
+                        
+                    <input
+                            placeholder='Cliente'
+                            value={client}
+                            onChange={(ev)=>{setClient(ev.target.value)}}
+                        />
+                        <input
+                            placeholder='Modelo/marca'
+                            value={model}
+                            onChange={(ev)=>{setModel(ev.target.value)}}
+                            
+                        />
+                        <input
+                            placeholder='Usuario'
+                            value={user}
+                            onChange={(ev)=>{setUser(ev.target.value)}}
+                            
+                        />
+                        <input
+                            placeholder='Senha'
+                            value={password}
+                            onChange={(ev)=>{setPassword(ev.target.value)}}
+                            
+                        />
+                        <input
+                            placeholder='Qtd. de cameras'
+                            value={qtdCam}
+                            onChange={(ev)=>{setQtdCam(ev.target.value)}}
+                            
+                        />
+                        <input
+                            placeholder='Ip'
+                            value={ip}
+                            onChange={(ev)=>{setIp(ev.target.value)}}
+                            
+                        />
+                        <input
+                            type='number'
+                            placeholder='Porta http'
+                            value={httpPort}
+                            onChange={(ev)=>{setHttpPort(ev.target.value)}}
+                            
+                        />
+                        <input
+                            type='number'
+                            placeholder='Porta servico'
+                            value={servicePort}
+                            onChange={(ev)=>{setservicePort(ev.target.value)}}
+                            
+                        />
+                        <input
+                            type='text'
+                            placeholder='Armazenamento'
+                            value={storage}
+                            onChange={(ev)=>{setStorage(ev.target.value)}}
+                            
+                        />
+                        <input
+                            type='text'
+                            placeholder='Dias de gravação:'
+                            value={storageTime}
+                            onChange={(ev)=>{setStorageTime(ev.target.value)}}
+                        />
+                        <input
+                            placeholder='Observações:'
+                            value={obs}
+                            onChange={(ev)=>{setObs(ev.target.value)}}
+                        />
+                        <input
+                            placeholder='Assinado por:'
+                            value={signedBy}
+                            onChange={(ev)=>{setSignedBy(ev.target.value)}}
+                        />
+                        <input
+                            type='email'
+                            placeholder='Enviar para:'
+                            value={email}
+                            onChange={(ev)=>{setEmail(ev.target.value)}}
+                        />
                     
-                />
-                <input
-                    placeholder='Senha'
-                    value={password}
-                    onChange={(ev)=>{setPassword(ev.target.value)}}
-                    
-                />
-                <input
-                    placeholder='Qtd. de cameras'
-                    value={qtdCam}
-                    onChange={(ev)=>{setQtdCam(ev.target.value)}}
-                    
-                />
-                <input
-                    placeholder='Ip'
-                    value={ip}
-                    onChange={(ev)=>{setIp(ev.target.value)}}
-                    
-                />
-                <input
-                    type='number'
-                    placeholder='Porta http'
-                    value={httpPort}
-                    onChange={(ev)=>{setHttpPort(ev.target.value)}}
-                    
-                />
-                <input
-                    type='number'
-                    placeholder='Porta servico'
-                    value={servicePort}
-                    onChange={(ev)=>{setservicePort(ev.target.value)}}
-                    
-                />
-                <input
-                    type='text'
-                    placeholder='Armazenamento'
-                    value={storage}
-                    onChange={(ev)=>{setStorage(ev.target.value)}}
-                    
-                />
-                <input
-                    type='text'
-                    placeholder='Dias de gravação:'
-                    value={storageTime}
-                    onChange={(ev)=>{setStorageTime(ev.target.value)}}
-                />
-                <input
-                    placeholder='Observações:'
-                    value={obs}
-                    onChange={(ev)=>{setObs(ev.target.value)}}
-                />
-                <input
-                    placeholder='Assinado por:'
-                    value={signedBy}
-                    onChange={(ev)=>{setSignedBy(ev.target.value)}}
-                />
-                <input
-                    type='email'
-                    placeholder='Enviar para:'
-                    value={email}
-                    onChange={(ev)=>{setEmail(ev.target.value)}}
-                />
-               
-               </div>
-                <section>
-                    <button>Enviar registro</button>
-                    <button type='button' onClick={()=>{navigate('/verificacao')}}>Voltar</button>
-                </section>
-            </form>
-        </ContainerHomePage>
-        <ContainerModal id='modal'>
-            <AnimLoading/>
-        </ContainerModal>
-        </ContainerOsPage>
-        <Footer/>
+                    </div>
+                        <section>
+                            <button>Enviar registro</button>
+                        </section>
+                    </form>
+                </ContainerHomePage>
+                <ContainerModal id='modal'>
+                    <AnimLoading/>
+                </ContainerModal>
+            </ContainerOsPage>
+            <NavBar/>
+            <Footer/>
        </ContainerMobile>
     </ContainerBase>
  );

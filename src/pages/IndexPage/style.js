@@ -25,7 +25,6 @@ export const ContainerIndexPage = styled.div`
 export const ContainerBanner = styled.div`
     width: 100%;
     height: 90%;
-    background: #fff;
     overflow-y: auto;
     display: flex;
     align-items: center;
@@ -57,8 +56,8 @@ export const ContainerHour = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    p{
-        font-size: 4rem;
+    span{
+        font-size:1.5rem;
     }
 `
 
@@ -70,20 +69,24 @@ export const CardHour = styled.div`
     justify-content: center;
     align-items: center;
     margin: 0 1rem;
-    background: #424242;
+    background: rgba(0,0,0,0.5);
     span{
-        font-size: 4rem;
+        font-size: 2rem;
         color: #fff;
     }
 `
 
 export const ContainerServices = styled.div`
     width: 100%;
-    height: 55%;
+    height: 75%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border-radius: 10px;
     gap: 1rem 0;
+    img{
+        width: 100%;
+        height: 100%;
+    }
 `
