@@ -10,6 +10,7 @@ import { GenerateData } from '../../services/GenerateDate';
 
 export default function IndexPage() {
     const navigate = useNavigate()
+
     
     const data = ()=>{
         const date = new Date()
@@ -17,15 +18,13 @@ export default function IndexPage() {
         const month = date.getMonth() + 1 
         const year = date.getFullYear()
         const hour = date.getHours()
-        const minutes = date.getHours()
+        const minutes = date.getMinutes()
 
-        return `${today}/${month}/${year} as ${hour}/${minutes}`
+        return `${today}/${month}/${year} as ${hour}:${minutes}`
 
     }
 
     console.log(data());
-
-    
    
 
 return (
