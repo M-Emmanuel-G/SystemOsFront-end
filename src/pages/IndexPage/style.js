@@ -38,55 +38,47 @@ export const ContainerBanner = styled.div`
     
 `
 
-export const ContainerEachServices = styled.div`
-    width: 90%;
-    height: 70px;
-    border: 1px solid black;
+export const EachServices = styled.div`
+    width: 350px;
+    height: 50px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    margin:0.5rem 0;
+    border:2px solid #fff;
     border-radius:10px;
-    background: #424242;
-    color: #fff;
 `;
 
-export const ContainerHour = styled.div`
+export const ContainerTittle = styled.div`
     width: 100%;
-    height: 30%;
+    height: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
-    span{
-        font-size:1.5rem;
-    }
-`
-
-export const CardHour = styled.div`
-    width: 200px;
-    height: 100px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 1rem;
-    background: rgba(0,0,0,0.5);
-    span{
-        font-size: 2rem;
-        color: #fff;
-    }
 `
 
 export const ContainerServices = styled.div`
     width: 100%;
-    height: 75%;
+    height: 70%;
+    overflow-y: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+`;
+
+export const Services = styled.div`
+    width: 300px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border:2px solid #0954CD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin:1rem 0;
     border-radius: 10px;
-    gap: 1rem 0;
-    img{
-        width: 100%;
-        height: 100%;
-    }
 `

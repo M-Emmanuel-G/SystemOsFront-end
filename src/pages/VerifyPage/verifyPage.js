@@ -27,7 +27,7 @@ export default function VerifyPage() {
                 <span>limpeza interna do DVR...</span>
             </ContainerVerify>
             <ContainerAction>
-                <button onClick={()=>{navigate('/OsPage')}}>Avançar</button>
+                <button onClick={()=>{navigate('/informeCliente')}}>Avançar</button>
             </ContainerAction>
             <NavBar/>
             <Footer/>

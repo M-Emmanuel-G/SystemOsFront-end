@@ -20,7 +20,7 @@ export const ContainerMobile = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image:url() ;
+    background: linear-gradient(339deg, rgba(83,81,81,1) 40%, rgba(0,13,245,1) 100%);
 `
 
 const AnimLoadingKey = keyframes`
