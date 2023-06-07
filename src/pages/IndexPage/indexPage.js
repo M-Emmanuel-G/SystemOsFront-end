@@ -5,10 +5,28 @@ import { ContainerBase, ContainerMobile } from '../../style/styleBase';
 import { ContainerServices, ContainerTittle, Services } from './style';
 import Footer from '../../components/Footer/footer'
 import NavBar from '../../components/NavBar/navBar';
+import { GenerateData } from '../../services/GenerateDate';
 
 
 export default function IndexPage() {
     const navigate = useNavigate()
+    
+    const data = ()=>{
+        const date = new Date()
+        const today = date.getDate()
+        const month = date.getMonth() + 1 
+        const year = date.getFullYear()
+        const hour = date.getHours()
+        const minutes = date.getHours()
+
+        return `${today}/${month}/${year} as ${hour}/${minutes}`
+
+    }
+
+    console.log(data());
+
+    
+   
 
 return (
    <ContainerBase>

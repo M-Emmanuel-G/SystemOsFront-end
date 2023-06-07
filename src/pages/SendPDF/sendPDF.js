@@ -20,7 +20,7 @@ export default function SendPDF() {
                 quality:1,
             },
             html2canvas:{
-                width:900,
+                width:1000,
                 scale:2,
                 logging:true,
                 dpi:192,
