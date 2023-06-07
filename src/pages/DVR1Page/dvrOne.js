@@ -177,7 +177,7 @@ export default function DVR1Page() {
                 }}
             />
             </div>
-            <div>
+            {/* <div>
                 <label>Responsável:</label>
                 <input
                 type="text"
@@ -187,7 +187,7 @@ export default function DVR1Page() {
                     setSignedBy(ev.target.value);
                 }}
                 />
-            </div>    
+            </div>     */}
           </form>
           <button onClick={generatePDF}>Enviar</button>
         </ContainerDvrOne>
