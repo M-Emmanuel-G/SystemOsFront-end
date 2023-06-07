@@ -4,7 +4,7 @@ export const  GenerateData = ()=> {
         const month = date.getMonth() + 1
         const year = date.getFullYear()
         const hour = date.getHours()
-        const minutes = date.getHours()
+        const minutes = date.getMinutes()
 
-        return `${today}/${month}/${year} às ${hour}/${minutes}`
+        return `${today}/${month}/${year} às ${hour}:${minutes}`
 }
