@@ -4,12 +4,11 @@ import Footer from '../../components/Footer/footer';
 import Header from '../../components/header/header';
 import NavBar from '../../components/NavBar/navBar';
 import { GenerateData } from '../../services/GenerateDate';
-import { AnimPulse, ContainerBase, ContainerMobile } from '../../style/styleBase';
+import { AnimPulse, Circle, ContainerBase, ContainerMobile } from '../../style/styleBase';
 import { ContainerSendEmail, ModalContainer } from './style';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 import Swal from 'sweetalert2';
 
 export default function SendEmail() {
@@ -208,7 +207,7 @@ export default function SendEmail() {
             <div>
             <textarea
                 rows={10} 
-                cols={50}
+                cols={20}
                 value={obs}
                 onChange={(ev)=>{setObs(ev.target.value)}}    
             />
@@ -217,6 +216,7 @@ export default function SendEmail() {
           </form>
             </ContainerSendEmail>
             <NavBar/>
+            <Circle/>
             <Footer/>
         </ContainerMobile>
         <ModalContainer id='modalLoading'>

@@ -6,6 +6,14 @@ export const ContainerSendEmail = styled.main`
     display:flex;
     flex-direction:column;
     align-items:center;
+    overflow-y:auto;
+    form{
+        div{
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+        }
+    }
     input{
         width: 230px;
         height: 27px;
@@ -13,10 +21,13 @@ export const ContainerSendEmail = styled.main`
         background:none;
         color: #fff;
         outline:none;
-    }
-    input, label{
         margin: 0 0.2rem;
     }
+
+    label{
+        color: #0954CD;
+    }
+
     button{
         width: 300px;
         height: 40px;
@@ -32,11 +43,14 @@ export const ContainerSendEmail = styled.main`
         margin:2rem 0;
         border-radius: 10px;
         color:#fff;
+        position:relative;
+        left: 2rem;
     }
     textarea{
-        width: 376px;
+        width: 350px;
         background: #c7c6c3;
-        border:2px solid #000
+        border:2px solid #000;
+        outline: none;
     }
 `;
 

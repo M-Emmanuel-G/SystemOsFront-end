@@ -5,7 +5,7 @@ import Footer from '../../components/Footer/footer';
 import Header from '../../components/header/header';
 import NavBar from '../../components/NavBar/navBar';
 import { GlobalStateContext } from '../../context/GlobalStateContext';
-import { ContainerBase, ContainerMobile } from '../../style/styleBase';
+import { Circle, ContainerBase, ContainerMobile } from '../../style/styleBase';
 import { ContainerManualPage, ContainerSearch } from './style';
 
 export default function ManualProducts() {
@@ -35,10 +35,10 @@ export default function ManualProducts() {
                         />
                     )
                 })}
-                {/* {renderProducts()} */}
             </ContainerManualPage>
             <NavBar/>
             <Footer/>
+            <Circle/>
         </ContainerMobile>
     </ContainerBase>
  );

@@ -15,14 +15,13 @@ export const ContainerMobile = styled.div`
     height: 667px; */
     width: 100%;
     height: 100%;
-    /* border: 1px solid black;
-    border-radius: 10px; */
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(339deg, rgba(83,81,81,1) 40%, rgba(0,13,245,1) 100%);
+    background: #49494C;
+    background: #000;
 `
 
 const AnimLoadingKey = keyframes`
@@ -61,4 +60,13 @@ export const AnimPulse = styled.div`
     background: #111;
 
     animation: ${LoadingPulse} .5s infinite linear;
+`
+
+export const Circle = styled.div`
+    width: 100%;
+    height: 100%;
+    background:#fff;
+    position:absolute;
+    clip-path: ellipse(60% 15% at 50% 100%);
+    z-index: 0;
 `

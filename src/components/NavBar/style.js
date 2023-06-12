@@ -6,6 +6,7 @@ export const ContainerNavBar = styled.div`
     display: flex;
     justify-content:space-evenly;
     align-items:center;
+    z-index:1;
     img{
         width: 70px;
         height: 100%;
