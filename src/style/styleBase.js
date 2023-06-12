@@ -59,7 +59,6 @@ export const AnimPulse = styled.div`
     height: 64px;
     border-radius: 50%;
     background: #111;
-    display: none;
 
-    animation: ${LoadingPulse} 1s infinite linear;
+    animation: ${LoadingPulse} .5s infinite linear;
 `

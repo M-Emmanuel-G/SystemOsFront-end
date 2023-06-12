@@ -13,7 +13,7 @@ export default function SendPDF() {
         const content = document.getElementById('content')
 
         const options = {
-            margin:[0, 5, 0, 0],
+            margin:[0, 3, 0, 0],
             filename:`Preventiva_${localStorage.getItem('client')}.pdf`,
             image:{
                 type:'jpeg',
@@ -21,9 +21,10 @@ export default function SendPDF() {
             },
             html2canvas:{
                 width:1000,
+                heigth:10,
                 scale:2,
                 logging:true,
-                dpi:192,
+                dpi:392,
                 letterRending:true,
                 backgroundColor:'#2744D2',
             },

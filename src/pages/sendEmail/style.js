@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ContainerSendEmail = styled.main`
     width:100%;
-    height:70%;
+    height:75%;
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -33,4 +33,20 @@ export const ContainerSendEmail = styled.main`
         border-radius: 10px;
         color:#fff;
     }
+    textarea{
+        width: 376px;
+        background: #c7c6c3;
+        border:2px solid #000
+    }
 `;
+
+export const ModalContainer = styled.main`
+    width: 100%;
+    height: 100%;
+    background:rgba(1,1,1, 0.5);
+    position:absolute;
+    display: none;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+`
