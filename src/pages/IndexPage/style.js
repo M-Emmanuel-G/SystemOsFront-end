@@ -66,6 +66,7 @@ export const ContainerServices = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    z-index: 2;
 `;
 
 export const Services = styled.div`
@@ -81,4 +82,16 @@ export const Services = styled.div`
     font-size: 1.5rem;
     margin:1rem 0;
     border-radius: 10px;
+    color: #fff;
+`
+
+
+
+export const CircleBack = styled.div`
+    width: 100%;
+    height: 100%;
+    background:black;
+    position:absolute;
+    clip-path: circle(45% at right bottom);
+    z-index: 0;
 `

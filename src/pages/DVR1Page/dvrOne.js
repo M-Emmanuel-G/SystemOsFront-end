@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Footer from "../../components/Footer/footer";
 import Header from "../../components/header/header";
 import NavBar from "../../components/NavBar/navBar";
-import { ContainerBase, ContainerMobile } from "../../style/styleBase";
+import { Circle, ContainerBase, ContainerMobile } from "../../style/styleBase";
 import { ContainerDvrOne } from "./style";
 import { useNavigate } from 'react-router-dom';
 
@@ -167,6 +167,7 @@ export default function DVR1Page() {
           <button onClick={generatePDF}>Enviar</button>
         </ContainerDvrOne>
         <NavBar />
+        <Circle/>
         <Footer />
       </ContainerMobile>
     </ContainerBase>

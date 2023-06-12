@@ -10,7 +10,7 @@ export const ContainerEachProduct = styled.div`
     align-items: center;
     a{
         text-decoration: none;
-        color: #0ffc03;
+        color: #0954CD;
     }
     img{
         width: 100px;

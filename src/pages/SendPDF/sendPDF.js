@@ -1,11 +1,12 @@
 import React from 'react';
 import Header from '../../components/header/header';
 import NavBar from '../../components/NavBar/navBar';
-import { ContainerBase, ContainerMobile } from '../../style/styleBase';
+import { Circle, ContainerBase, ContainerMobile } from '../../style/styleBase';
 import { ContainerPDF } from './style';
 import html2pdf from "html2pdf.js";
 import ImgLogo from '../../images/logoCtts.png';
 import { GenerateData } from '../../services/GenerateDate';
+import Footer from '../../components/Footer/footer';
 
 
 export default function SendPDF() {
@@ -121,7 +122,9 @@ export default function SendPDF() {
                     </main>
             <button onClick={sendPdf}>Gerar PDF</button>
             </ContainerPDF>
+            <Circle/>
             <NavBar/>
+            <Footer/>
         </ContainerMobile>
     </ContainerBase>
  );
