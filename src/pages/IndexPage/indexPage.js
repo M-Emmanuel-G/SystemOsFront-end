@@ -15,7 +15,6 @@ return (
         <ContainerMobile>
             <Header/>
             <ContainerTittle>
-                <h1>Serviços</h1>
             </ContainerTittle>
             <ContainerServices>
                 <Services onClick={()=>{navigate('/dvr1')}}>Preventiva PDF</Services>
