@@ -14,7 +14,7 @@ export default function SendPDF() {
 
         const options = {
             margin:[0, 5, 0, 0],
-            filename:'Arquivo.pdf',
+            filename:`Preventiva_${localStorage.getItem('client')}.pdf`,
             image:{
                 type:'jpeg',
                 quality:1,
@@ -118,7 +118,7 @@ export default function SendPDF() {
                         <h3>Obrigado por contar com os serviços da CTTS</h3>
                         <h3>Estamos aqui para lhe oferecer qualidade e agilidade em nossos servicos.</h3>
                     </main>
-            <button onClick={sendPdf}>EnviarPDF</button>
+            <button onClick={sendPdf}>Gerar PDF</button>
             </ContainerPDF>
             <NavBar/>
         </ContainerMobile>

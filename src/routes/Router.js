@@ -6,6 +6,7 @@ import VerifyPage from "../pages/VerifyPage/verifyPage";
 import ManualProducts from "../pages/ManualProducts/manualProducts";
 import DVR1Page from "../pages/DVR1Page/dvrOne";
 import SendPDF from "../pages/SendPDF/sendPDF";
+import SendEmail from "../pages/sendEmail/sendEmail";
 
 export default function Router() {
  return (
@@ -18,6 +19,7 @@ export default function Router() {
         <Route path="/manuais" element={<ManualProducts/>}/>
         <Route path="/DVR1" element={<DVR1Page/>}/>
         <Route path="/ConteudoPDF" element={<SendPDF/>}/>
+        <Route path="/Preventiva" element={<SendEmail/>}/>
     </Routes>
    </BrowserRouter>
  );

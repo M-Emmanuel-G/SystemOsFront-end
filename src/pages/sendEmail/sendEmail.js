@@ -1,51 +1,35 @@
-import React, { useState } from "react";
-import Footer from "../../components/Footer/footer";
-import Header from "../../components/header/header";
-import NavBar from "../../components/NavBar/navBar";
-import { ContainerBase, ContainerMobile } from "../../style/styleBase";
-import { ContainerDvrOne } from "./style";
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import Footer from '../../components/Footer/footer';
+import Header from '../../components/header/header';
+import NavBar from '../../components/NavBar/navBar';
+import { ContainerBase, ContainerMobile } from '../../style/styleBase';
+import { ContainerSendEmail } from './style';
 
-export default function DVR1Page() {
+export default function SendEmail() {
 
-    const navigate = useNavigate()
+    const [collaborator, setCollaborator] = useState("");
+    const [client, setClient] = useState("");
+    const [model, setModel] = useState("");
+    const [user, setUser] = useState("");
+    const [password, setPassword] = useState("");
+    const [qtdCam, setQtdCam] = useState("");
+    const [ip, setIp] = useState("");
+    const [httpPort, setHttpPort] = useState("");
+    const [servicePort, setservicePort] = useState("");
+    const [storage, setStorage] = useState("");
+    const [storageTime, setStorageTime] = useState("");
 
-  const [collaborator, setCollaborator] = useState("");
-  const [client, setClient] = useState("");
-  const [model, setModel] = useState("");
-  const [user, setUser] = useState("");
-  const [password, setPassword] = useState("");
-  const [qtdCam, setQtdCam] = useState("");
-  const [ip, setIp] = useState("");
-  const [httpPort, setHttpPort] = useState("");
-  const [servicePort, setservicePort] = useState("");
-  const [storage, setStorage] = useState("");
-  const [storageTime, setStorageTime] = useState("");
-  const [signedBy, setSignedBy] = useState("");
+    const sendEmail = (ev)=>{
+        ev.preventDefault()
+        
+    }
 
-  const generatePDF  =(ev)=>{
-    ev.preventDefault()
-    localStorage.setItem('colaborattor', collaborator )
-    localStorage.setItem('client', client )
-    localStorage.setItem('model', model)
-    localStorage.setItem('user', user)
-    localStorage.setItem('password', password)
-    localStorage.setItem('qtdCam', qtdCam)
-    localStorage.setItem('IP', ip)
-    localStorage.setItem('httpPort', httpPort)
-    localStorage.setItem('servicePort', servicePort)
-    localStorage.setItem('storage', storage)
-    localStorage.setItem('daysRecording', storageTime)
-
-    navigate('/conteudoPDF')
-}
-
-  return (
+ return (
     <ContainerBase>
-      <ContainerMobile>
-        <Header />
-        <ContainerDvrOne>
-          <form >
+        <ContainerMobile>
+            <Header/>
+            <ContainerSendEmail>
+            <form onSubmit={sendEmail}>
             <div>
                 <label>Colaborador:</label>
                 <input
@@ -163,12 +147,12 @@ export default function DVR1Page() {
                 }}
             />
             </div>
+            <button>Enviar</button>
           </form>
-          <button onClick={generatePDF}>Enviar</button>
-        </ContainerDvrOne>
-        <NavBar />
-        <Footer />
-      </ContainerMobile>
+            </ContainerSendEmail>
+            <NavBar/>
+            <Footer/>
+        </ContainerMobile>
     </ContainerBase>
-  );
+ );
 }
