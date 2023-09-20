@@ -19,9 +19,10 @@ return (
             <ContainerTittle>
             </ContainerTittle>
             <ContainerServices>
-                <Services onClick={()=>{toast.info('Em desenvolvimento.')}}>Preventiva PDF</Services>
+                <Services onClick={()=>{navigate('/ConteudoPDF')}}>Ordem de Servico</Services>
                 <Services onClick={()=>{navigate('/preventiva')}}>Preventiva Email</Services>
                 <Services onClick={()=>{navigate('/manuais')}}>Manuais</Services>
+                <Services onClick={()=>{navigate('/CalculoHD')}}>Cálculo HD</Services>
             </ContainerServices>
             <Circle/>
             <NavBar/>

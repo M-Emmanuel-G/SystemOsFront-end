@@ -70,7 +70,7 @@ export const ContainerServices = styled.div`
 `;
 
 export const Services = styled.div`
-    width: 300px;
+    width: 270px;
     height: 50px;
     display: flex;
     flex-direction: column;
