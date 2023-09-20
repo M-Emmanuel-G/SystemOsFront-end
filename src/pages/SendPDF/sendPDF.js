@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../../components/header/header';
 import NavBar from '../../components/NavBar/navBar';
 import { Circle, ContainerBase, ContainerMobile } from '../../style/styleBase';
-import { ContainerPDF } from './style';
+import { ContainerCampOrder, ContainerClient, ContainerHeader, ContainerInfo, ContainerLogo, ContainerOrderService, ContainerPDF, ContainerTitle } from './style';
 import html2pdf from "html2pdf.js";
 import ImgLogo from '../../images/logoCtts.png';
 import { GenerateData } from '../../services/GenerateDate';
 import Footer from '../../components/Footer/footer';
+import { myIp } from '../../services/myIP';
 
 
 export default function SendPDF() {
+    
     const sendPdf = ()=>{
         const content = document.getElementById('content')
 
@@ -40,87 +42,36 @@ export default function SendPDF() {
         <ContainerMobile>
             <Header/>
             <ContainerPDF>
-                    <main id='content'>
-                        <h2>Preventiva referente ao cliente {localStorage.getItem('client')} no dia {GenerateData()} </h2>
-                        <img src={ImgLogo}/>
-                        <h2>Preventiva!</h2>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>limpeza das lentes de cameras</td>
-                                </tr>
-                                <tr>
-                                    <td>limpeza dos sensores de alarmes</td>
-                                </tr>
-                                <tr>
-                                    <td>acesso remoto,</td>
-                                </tr>
-                                <tr>
-                                    <td>Inspecionar se estão gravando por detecção de movimento,</td>
-                                </tr>
-                                <tr>
-                                    <td>data e hora durante a reprodução,</td>
-                                </tr>
-                                <tr>
-                                    <td>conferir o sistema de sonorização,</td>
-                                </tr>
-                                <tr>
-                                    <td>conferir o sistema de de alarme,</td>
-                                </tr>
-                                <tr>
-                                    <td>conferir o sistema de interfonia,</td>
-                                </tr>
-                                <tr>
-                                    <td>limpeza do rack(Se necessário),</td>
-                                </tr>
-                                <tr>
-                                    <td>limpeza interna do DVR...</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <h2>Dados do DVR/NVD </h2>
-                        <section>
-                            <div>
-                                <span>Colaborador: {localStorage.getItem('colaborattor')} </span>
-                            </div>
-                            <div>
-                                <span>Cliente: {localStorage.getItem('client')}</span>
-                            </div>
-                            <div>
-                                <span>Data: {GenerateData()}</span>
-                            </div>
-                            <div>
-                                <span>Modelo/Marca: {localStorage.getItem('model')}</span>
-                            </div>
-                            <div>
-                                <span> Usuario: {localStorage.getItem('user')}</span>
-                            </div>
-                            <div>
-                                <span>Senha: {localStorage.getItem('password')}</span>
-                            </div>
-                            <div>
-                                <span>Qtd câmeras: {localStorage.getItem('qtdCam')}</span>
-                            </div>
-                            <div>
-                                <span>IP: {localStorage.getItem('IP')}</span>
-                            </div>
-                            <div>
-                                <span>Porta HTTP:  {localStorage.getItem('httpPort')}</span>
-                            </div>
-                            <div>
-                                <span>Porta de serviço: {localStorage.getItem('servicePort')}</span>
-                            </div>
-                            <div>
-                                <span>Armazenamento: {localStorage.getItem('storage')}</span>
-                            </div>
-                            <div>
-                                <span>Dias de gravação: {localStorage.getItem('daysRecording')}</span>
-                            </div>
-                        </section>
-                        <h3>Obrigado por contar com os serviços da CTTS</h3>
-                        <h3>Estamos aqui para lhe oferecer qualidade e agilidade em nossos servicos.</h3>
-                    </main>
-            <button onClick={sendPdf}>Gerar PDF</button>
+                <ContainerOrderService>
+                    <ContainerHeader>
+                        <ContainerLogo>
+                            <img src={ImgLogo}/>
+                        </ContainerLogo>
+                        <ContainerTitle>
+                            <span>XXXXXXXXXX XXXXXXXXX XXXXXXX</span>
+                            <p>Rua XXXXXXX - 000 - XXXXXXXXX - XXXXXXXXX 00000000 (00) 000000000</p>
+                            <p>XXXX@XXXX.COM.BR  WWW.XXXX.COM.BR</p>
+                            <p>CNPJ: 000.000.00/0000-00</p>
+                        </ContainerTitle>
+                    </ContainerHeader>  
+                    <ContainerInfo>
+                        <span>ORDEM DE SERVICO: 000000000</span>
+                        <span>Hora: 00:00 Data: 00/00/0000</span>
+                    </ContainerInfo>
+                    <ContainerClient>
+                        <span>Cliente: XXXXXXXXXX XXXXXXX XXXXXXX</span>
+                        <span>Endereco: Rua XXXXXXX - 000 - XXXXXXXXX - XXXXXXXXX 00000000 (00) 000000000 </span>
+                    </ContainerClient>
+                    <ContainerCampOrder>
+                      <div>
+                        <span>Servico solicitado</span>
+                      </div>
+                      <div>
+                        <span>Servicos Realizados</span>
+                      </div>
+                      <div></div>
+                    </ContainerCampOrder>
+                </ContainerOrderService>
             </ContainerPDF>
             <Circle/>
             <NavBar/>

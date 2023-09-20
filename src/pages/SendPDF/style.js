@@ -5,6 +5,9 @@ export const ContainerPDF = styled.main`
     height: 80%;
     overflow-y: auto;
     text-align: center;
+    color:#000;
+    display: flex;
+    justify-content: center;
     img{
         width: 100%;
         height: 300px;
@@ -18,19 +21,84 @@ export const ContainerPDF = styled.main`
         background: #0954CD;
         font-size: 1.3rem;
     }
-    main{
-        table{
-            width: 100%;
-            height: 100%;
-            tbody{
-                tr{
-                    th{
-                        width: 150px;
-                        display:flex;
-                        justify-content:flex-start;
-                    }
-                }
-            }
-        }
-    }
 `;
+
+export const ContainerOrderService = styled.div`
+    width: 50%;
+    height: 100%;
+    background: #fff;
+`
+
+export const ContainerHeader = styled.header`
+    width: 100%;
+    height: 20%;
+    display: flex;
+`
+
+export const ContainerLogo = styled.div`
+    width: 15%;
+    height: 100%;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+`
+
+export const ContainerTitle = styled.div`
+    width: 85%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    span{
+        font-size: 1.2rem;
+    }
+    p{
+        font-size: 12px;
+        margin: 0.3rem;
+    }
+`
+//------------------------------------------------------------------------------------------------------------------------//
+
+export const ContainerInfo = styled.section`
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`
+//------------------------------------------------------------------------------------------------------------------------//
+
+export const ContainerClient = styled.section`
+ width: 100%;
+ height: 10%;
+ background: crimson;
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ justify-content: center;
+ span{
+    font-size: 12px;
+ }
+
+`
+
+//------------------------------------------------------------------------------------------------------------------------//
+
+export const ContainerCampOrder = styled.section`
+    width: 100%;
+    height: 50%;
+    background: yellow;
+    display: flex;
+    div{
+        width: 50%;
+        height: 100%;
+
+    }
+`
+
+//------------------------------------------------------------------------------------------------------------------------//
+
+//------------------------------------------------------------------------------------------------------------------------//
+
+//------------------------------------------------------------------------------------------------------------------------//
