@@ -83,6 +83,11 @@ export const Services = styled.div`
     margin:1rem 0;
     border-radius: 10px;
     color: #fff;
+    a{
+        font-size: 1.5rem;
+        color: #fff;
+        text-decoration: none;
+    }
 `
 
 

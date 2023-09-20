@@ -22,7 +22,9 @@ return (
                 <Services onClick={()=>{navigate('/ConteudoPDF')}}>Ordem de Servico</Services>
                 <Services onClick={()=>{navigate('/preventiva')}}>Preventiva Email</Services>
                 <Services onClick={()=>{navigate('/manuais')}}>Manuais</Services>
-                <Services onClick={()=>{navigate('/CalculoHD')}}>Cálculo HD</Services>
+                <Services >
+                    <a href='https://backend.intelbras.com/sites/default/files/2021-07/Lista_capacidade_gravacao-HDs.pdf'> Dias de Gravação</a>
+                </Services>
             </ContainerServices>
             <Circle/>
             <NavBar/>

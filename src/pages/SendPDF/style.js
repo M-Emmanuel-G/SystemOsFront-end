@@ -8,6 +8,8 @@ export const ContainerPDF = styled.main`
     color:#000;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     img{
         width: 100%;
         height: 300px;
@@ -21,6 +23,19 @@ export const ContainerPDF = styled.main`
         background: #0954CD;
         font-size: 1.3rem;
     }
+
+    input{
+        width:300px;
+        height:20px;
+        margin: 1rem 0;
+        ::placeholder{
+            text-align: center;
+        }
+    }
+    h2{
+        color: #fff;
+    }
+
 `;
 
 export const ContainerOrderService = styled.div`
@@ -57,6 +72,13 @@ export const ContainerTitle = styled.div`
         font-size: 12px;
         margin: 0.3rem;
     }
+    ::after{
+       content:'';
+       width: 100%;
+       height: 2px;
+       background: #000;
+       display: flex;
+    }
 `
 //------------------------------------------------------------------------------------------------------------------------//
 
@@ -66,13 +88,13 @@ export const ContainerInfo = styled.section`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 `
 //------------------------------------------------------------------------------------------------------------------------//
 
 export const ContainerClient = styled.section`
  width: 100%;
  height: 10%;
- background: crimson;
  display: flex;
  flex-direction: column;
  align-items: flex-start;
@@ -80,6 +102,14 @@ export const ContainerClient = styled.section`
  span{
     font-size: 12px;
  }
+ ::after{
+       content:'';
+       width: 100%;
+       height: 2px;
+       background: #000;
+       display: flex;
+       margin-top: 0.3rem;
+    }
 
 `
 
@@ -88,7 +118,6 @@ export const ContainerClient = styled.section`
 export const ContainerCampOrder = styled.section`
     width: 100%;
     height: 50%;
-    background: yellow;
     display: flex;
     div{
         width: 50%;
