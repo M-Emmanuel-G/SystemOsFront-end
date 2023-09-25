@@ -11,48 +11,50 @@ const styles = StyleSheet.create({
     margin: 10,
     padding: 10,
     flexGrow: 1,
+    fontSize:12
   },
+
+  logo:{
+    width:'100%', 
+    height:'10%', 
+    justifyContent:'center', 
+    alignItems:'center',
+  },
+  title:{
+    width:'100%', 
+    height:'5%', 
+    flexDirection:'row', 
+    justifyContent:'space-between',
+    alignItems:'center',
+    borderBottom: '1px solid #000',
+  },
+  materials:{
+    width:'100%',
+    height:'85%', 
+    alignItems:'start',
+  }
+  
 });
 
 const MyDocument = (props) => (
   <Document>
     <Page size="A4" style={styles.page}>
       <View style={styles.section}>
-        <Image
-          src={Logo}
-          style={{
-            width: 300,
-            height: 200,
-            textAlign: 'center'
-          }}
-        />
-        <Text
-          style={
-            {
-              color:`#424242`,
-              fontSize: 30,
-              marginTop: 20,
-            }
-          }
-        >Cliente: {props.client}</Text>
-        <Text 
-            style={
-              {
-                color:`#424242`,
-                fontSize: 30,
-                marginTop: 20,
-              }
-            }
-        >Materiais utilizados: </Text>
-        <Text 
-          style={
-            {
-              color:`#000`,
-              fontSize: 20,
-              marginTop: 10,
-            }
-          }
-        > {props.material} </Text>
+        <View style={styles.logo}> <Image src={Logo} style={{width: 150,height: 150,}}/></View>
+        <View style={styles.title}>
+          <View style={{flex:1, flexDirection:'row', fontSize:12}}>
+            <Text style={{color:`#000`}}>Cliente: </Text>
+            <Text>{props.client}</Text>
+          </View>
+          <View style={{flex:1, flexDirection:'row', fontSize:12}}>
+            <Text style={{color:`#000`}}> Horario: </Text>
+            <Text >{props.date}</Text>
+          </View>
+        </View>
+        <View style={styles.materials}>
+          <Text style={{fontSize:20, marginTop: 10,}}>Materiais Utilizados:</Text>
+          <Text>{props.material}</Text>
+        </View>
       </View>
     </Page>
   </Document>

@@ -15,31 +15,8 @@ export default function SendPDF() {
     
     const [client, setClient] = useState('')
     const [material, setMaterial] = useState('')
+    const [date, setDate] = useState(GenerateData())
 
-    const sendPdf = ()=>{
-        // const content = document.getElementById('content')
-
-        // const options = {
-        //     margin:[0, 3, 0, 0],
-        //     filename:`Preventiva_${localStorage.getItem('client')}.pdf`,
-        //     image:{
-        //         type:'jpeg',
-        //         quality:1,
-        //     },
-        //     html2canvas:{
-        //         width:900,
-        //         heigth:10,
-        //         scale:2,
-        //         logging:true,
-        //         dpi:392,
-        //         letterRending:true,
-        //         backgroundColor:'#2744D2',
-        //     },
-        //     jsPDF:{unit:'mm', format:'a4', orientation:'portrait'}
-        // }
-    
-        // html2pdf().set(options).from(content).save()
-    }
 
  return (
     <ContainerBase>
@@ -65,12 +42,14 @@ export default function SendPDF() {
                 <MyDocument
                     client={client}
                     material={material}
+                    date={date}
                 />
             </PDFViewer> */}
             <PDFDownloadLink document={
             <MyDocument
                 client={client}
                 material={material}
+                date = {date}
             />} 
                 style={{
                     width: 300,
@@ -84,7 +63,7 @@ export default function SendPDF() {
                     textDecoration:'none',
                     fontSize: 20,
                 }}
-                fileName='materiais-utilizados.pdf'>
+                fileName={`${date} | ${client}.pdf`}>
                 {({ blob, url, loading, error }) =>
                     loading ? 'Carregando documento...' : 'Gerar PDF'
                 }
