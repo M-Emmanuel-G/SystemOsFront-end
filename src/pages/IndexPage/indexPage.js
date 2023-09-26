@@ -19,7 +19,8 @@ return (
             <ContainerTittle>
             </ContainerTittle>
             <ContainerServices>
-                <Services onClick={()=>{navigate('/ConteudoPDF')}}>Ordem de Servico</Services>
+                <Services onClick={()=>{navigate('/OrdemServico')}}>Ordem de Serviço</Services>
+                <Services onClick={()=>{navigate('/ConteudoPDF')}}>Materiais Utilizados</Services>
                 <Services onClick={()=>{navigate('/preventiva')}}>Preventiva Email</Services>
                 <Services onClick={()=>{navigate('/manuais')}}>Manuais</Services>
                 <Services >
