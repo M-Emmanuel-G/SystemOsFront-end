@@ -8,6 +8,7 @@ import DVR1Page from "../pages/DVR1Page/dvrOne";
 import SendPDF from "../pages/SendPDF/sendPDF";
 import SendEmail from "../pages/sendEmail/sendEmail";
 import HDCalcPage from "../pages/HDCalcPage/hdCalc";
+import OrderServices from "../pages/OrderServices/orderServices";
 
 export default function Router() {
  return (
@@ -22,6 +23,7 @@ export default function Router() {
         <Route path="/ConteudoPDF" element={<SendPDF/>}/>
         <Route path="/Preventiva" element={<SendEmail/>}/>
         <Route path="/CalculoHD" element={<HDCalcPage/>}/>
+        <Route path="/OrdemServico" element={<OrderServices/>}/>
     </Routes>
    </BrowserRouter>
  );
