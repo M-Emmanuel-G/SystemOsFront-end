@@ -47,13 +47,13 @@ const MyDocument = (props) => (
             <Text>{props.client}</Text>
           </View>
           <View style={{flex:1, flexDirection:'row', fontSize:12}}>
-            <Text style={{color:`#000`}}> Horario: </Text>
+            <Text style={{color:`#000`}}> Data: </Text>
             <Text >{props.date}</Text>
           </View>
         </View>
         <View style={styles.materials}>
           <Text style={{fontSize:20, marginTop: 10,}}>Materiais Utilizados:</Text>
-          <Text>{props.material}</Text>
+          <Text style={{marginTop: 10,}}  >{props.material}</Text>
         </View>
       </View>
     </Page>
