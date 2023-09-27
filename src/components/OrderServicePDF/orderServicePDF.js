@@ -33,7 +33,14 @@ const styles = StyleSheet.create({
   solicitation:{
   },
   materials:{
-  }
+  },
+  marginText:{
+    marginTop:10,
+  },
+  titleText:{
+    fontSize:15,
+    marginTop:20,
+  },
 
 });
 
@@ -51,7 +58,7 @@ const OrderDocument = (props) => (
               <Text> {props.client}</Text>
             </View>
             <View style={{ flexDirection:'row'}}>
-              <Text> Horario: </Text>
+              <Text> Data: </Text>
               <Text> {props.date} </Text>
             </View>
           </View>
@@ -66,16 +73,35 @@ const OrderDocument = (props) => (
             </View>
           </View>
         </View>
-        <Text style={{fontSize:15, marginTop:20,}}>Solicitação do cliente:</Text>
+        <View>
+          <Text style={styles.marginText}>Observações:</Text>
+          <Text style={styles.marginText}>Os equipamentos fornecidos possuem garantias declarada pelo fabricante</Text>
+          <Text style={styles.marginText}>A CTTS oferece garantia total(mão de obra e equipamentos) no total de 120 dias</Text>
+          <Text style={styles.marginText}>Após este prazo será cobrada uma taxa de visita técnica a ser definida no ato da solicitação da mesma</Text>
+          <Text style={styles.marginText}>A garantia não será valida nos casos de descargas atmosféricas, agentes da natureza ou mau uso</Text>
+          <Text style={styles.marginText}>A CTTS segurança eletronica, a mais de 10 anos no mercado atuando nos seguimentos de CFTV</Text>
+          <Text style={styles.marginText}>Alarmes eletronicos, interfonia digital, comunicação condominial, sonorização de ambientes</Text>
+          <Text style={styles.marginText}>Automatização de portões e cancelas, cabeamento estruturado, cabeamento óptico(fibra óptica)</Text>
+          <Text style={{marginTop:30}}>Nossa missào e fornecer os melhores produtos, serviços e soluções para nossos clientes</Text>
+        </View>
+        <Text style={styles.titleText}>Solicitação do cliente:</Text>
         <View style={styles.solicitation}>
           <Text style={{marginLeft:20,}}>{props.solicitation}</Text>
         </View>
-        <Text style={{fontSize:15, marginTop:20,}}>Itens enviados:</Text>
+        <Text style={styles.titleText}>Itens enviados:</Text>
         <View style={styles.materials}>
           <Text style={{marginLeft:20,}}>{props.materials}</Text>
         </View>
         <View>
-          <Text style={{marginLeft:10,}}>Responsavel técnico: {props.resTechnician}</Text>
+          <Text style={styles.titleText}>Defeitos constatados:</Text>
+          <Text>{props.defectsFounds}</Text>
+        </View>
+        <View>
+          <Text style={styles.titleText}>Observações:</Text>
+          <Text>{props.obs}</Text>
+        </View>
+        <View>
+          <Text style={styles.titleText}>Responsável técnico: {props.resTechnician}</Text>
         </View>
       </View>
     </Page>

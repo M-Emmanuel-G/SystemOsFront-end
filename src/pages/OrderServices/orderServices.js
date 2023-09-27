@@ -16,8 +16,9 @@ export default function OrderServices() {
     const [resTechnician, setResTechnician] = useState('')
     const [solicitation, setSolicitation] = useState('')
     const [materials, setMaterials] = useState('')
-    const [date, setDate] = useState(GenerateData())
-
+    const [date] = useState(GenerateData())
+    const [defectFound, setDefectFound] = useState('')
+    const [obs, setObs] = useState('')
 
  return (
     <ContainerBase>
@@ -59,9 +60,22 @@ export default function OrderServices() {
                         onChange={(ev)=>{setMaterials(ev.target.value)}}
                         cols={38}
                         rows={10}
-                    >
-                        
-                    </textarea>
+                    />
+                    <textarea
+                        placeholder='Defeitos encontrados.'
+                        value={defectFound}
+                        onChange={(ev)=>{setDefectFound(ev.target.value)}}
+                        cols={38}
+                        rows={10}
+                    />
+                    <textarea
+                        placeholder='Observações...'
+                        value={obs}
+                        onChange={(ev)=>{setObs(ev.target.value)}}
+                        cols={38}
+                        rows={10}
+                    />
+
                         {/* <PDFViewer width={400} height={700}>
                         <OrderDocument
                             client={client}
@@ -81,6 +95,8 @@ export default function OrderServices() {
                 solicitation={solicitation}
                 date={date}
                 materials={materials}
+                defectFound={defectFound}
+                obs={obs}
             />} 
                 style={{
                     width: 300,

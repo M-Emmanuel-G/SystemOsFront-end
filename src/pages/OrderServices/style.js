@@ -17,10 +17,16 @@ export const ContainerOrderService = styled.main`
             height: 25px;
             border-radius: 12px;
             margin-top: 1rem;
+            ::placeholder{
+                text-align: center;
+            }
         }
         textarea{
             border-radius: 12px;
             margin-top: 1rem;
+            ::placeholder{
+                text-align: center;
+            }
         }
     }
 `;
